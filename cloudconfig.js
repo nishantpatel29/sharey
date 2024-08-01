@@ -10,7 +10,7 @@ const storage = new CloudinaryStorage({
     params: {
       folder: 'sharey',
       resource_type: 'raw', 
-      allowedformats:[  'jpeg','txt','docx','java','c','py','html','js'],
+      allowedformats:[  'jpeg','txt','docx','java','c','py','html','js','mp4'],
     },
   });
   module.exports={
