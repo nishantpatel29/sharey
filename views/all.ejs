@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <nav>
+    <div class="nav-img">
+        <img src="sharey-high-resolution-logo.png" >
+    </div>
+    <div class="nav-btn" >
+            <form action="/logout" method="post">
+                <button>Sign Out</button>
+            </form>
+        
+    </div>
+    </nav>
+  <div class="main-list">
+    <form action="/upload" method="post"  enctype="multipart/form-data">
+        <input type="file" name="upload-file" id="upload-file"   placeholder="select the file you want to uplaod">
+      <button>Submit</button>
+    </form>
+    <%if(a.files.length>0){%>
+    <div class="listings">
+      <%a.files.forEach(element => {%>
+        <div class="card"> 
+            <div class="caption"><p><%=element.filename%></p></div>
+            <div class="group" style="display: flex; align-items: center; gap: 2rem;">
+              <form action="/delete?_method=DELETE" method="post">
+                <input type="hidden" name="input" value="<%=element.url%> <%=element.filename%>" >
+                <button class="del" >
+
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </form>
+              <a href="<%=element.url%>" download="aa" ><i class="fa-regular fa-circle-down"></i></a>
+            </div>
+        </div>
+      <%})%>
+      <%}%>
+   
+     
+    </div>
+  </div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>
