@@ -320,6 +320,7 @@ button {
 
         & input {
             width: 50rem;
+            padding-left: 2rem;
         }
     }
 }
