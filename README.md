@@ -3,7 +3,7 @@
 **Sharey** is a minimal and secure file-sharing web app where users can register, log in, and upload files to the cloud. Each file is assigned a unique shareable link for quick access and distribution.
 
 🔗 **Live Demo**: [sharey-56rx.onrender.com](https://sharey-56rx.onrender.com)  
-📁 **GitHub Repo**: [git@github.com:nishantpatel29/sharey.git](git@github.com:nishantpatel29/sharey.git)
+
 
 ---
 
